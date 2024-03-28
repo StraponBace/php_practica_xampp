@@ -1,0 +1,16 @@
+{
+    "name": "straponbace/php_practica_xampp",
+    "description": "Description",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "StraponBace",
+            "email": "ponomarev.tima2005@mail.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.4 | ^8.0"
+    }
+}
