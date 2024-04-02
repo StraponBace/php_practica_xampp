@@ -2,6 +2,7 @@
 
 namespace Controller;
 
+use Model\Department;
 use Model\Post;
 use Src\View;
 use Src\Request;
@@ -36,10 +37,13 @@ class Site
         if ($request->method === 'GET') {
             return new View('site.login');
         }
+
         //Если удалось аутентифицировать пользователя, то редирект
         if (Auth::attempt($request->all())) {
             app()->route->redirect('/hello');
         }
+//        var_dump($request->all());die();
+
         //Если аутентификация не удалась, то сообщение об ошибке
         return new View('site.login', ['message' => 'Неправильные логин или пароль']);
     }
@@ -49,4 +53,17 @@ class Site
         Auth::logout();
         app()->route->redirect('/hello');
     }
+
+    public function add_department(Request $request): string
+    {
+        if($request->method === 'GET') {
+            return new View('site.add_department');
+        }
+        if ($request->method === 'POST' && Department::create($request->all())) {
+            app()->route->redirect('/go');
+        }
+        return new View('site.signup');
+        return new View('site.add_department', ['message' => 'исправить message']);
+    }
+
 }

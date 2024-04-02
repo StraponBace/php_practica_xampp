@@ -1,0 +1,82 @@
+@font-face {
+    font-family: 'Inter-Regular';
+    src: url(../fonts/Inter-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Inter-Bold', sans-serif;
+    src: url(../fonts/Inter-Bold.ttf);
+}
+
+@font-face{
+    font-family: 'Inter-SemiBold';
+    src: url(../fonts/Inter-SemiBold.ttf);
+}
+
+p, a, input, button{
+    font-family: 'Inter-Regular';
+    font-size: 24px;
+}
+
+h1{
+    font-size: 48px;
+    font-family: 'Inter-Bold';
+}
+
+h2, h3{
+    font-family: 'Inter-SemiBold';
+}
+
+h2{
+    font-size: 32px;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 3em;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    background-color: cornflowerblue;
+    align-items: center;
+    justify-content: space-between;
+    width: 25em;
+    height: 98vh;
+    padding: 1vh 0;
+}
+
+header > nav{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+header > nav > a{
+    text-decoration: none;
+    color: black;
+    border: solid black;
+    padding: 0.5em;
+    text-align: center;
+    width: 12em;
+}
+
+header > p {
+    text-align: center;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
+}
+
