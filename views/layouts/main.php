@@ -17,46 +17,41 @@
     if (!app()->auth::check()):
         ?>
         <p>Авторизируйтесь чтобы получить доступ к функционалу</p>
+        <style>
+            header{
+                gap: 23em;
+            }
+        </style>
     <?php
     else:
         ?>
         <nav>
-            <?php
-            if (app()->auth::role() == "1"):
-            ?>
-            <a href="<?= app()->route->getUrl('/add_new_employee') ?>">Добавить нового сотрудника</a>
-            <?php
-            elseif:
-            ?>
+<!--            --><?php
+//            if (app()->auth::role() == "admin"):
+//            ?>
+            <a href="<?= app()->route->getUrl('/add_employee') ?>">Добавить нового сотрудника</a>
+<!--            --><?php
+//            elseif (app()->auth::role() == "employee"):
+//            ?>
             <a href="<?= app()->route->getUrl('/add_employee') ?>">Добавить сотрудника</a>
             <a href="<?= app()->route->getUrl('/add_department') ?>">Добавить подразделение</a>
             <a href="<?= app()->route->getUrl('/attach_employee') ?>">Прикрепить сотрудника</a>
             <a href="<?= app()->route->getUrl('/list_employees') ?>">Списки сотрудника</a>
-            <?php
-            endif;
-            ?>
+<!--            --><?php
+//            endif;
+//            ?>
         </nav>
         <nav>
             <a href="<?= app()->route->getUrl('/logout') ?>">Выход (<?= app()->auth::user()->name ?>)</a>
         </nav>
+        <style>
+            header{
+                justify-content: space-between;
+            }
+        </style>
     <?php
     endif;
     ?>
-    <nav>
-        <a href="<?= app()->route->getUrl('/hello') ?>">Главная</a>
-        <?php
-        if (!app()->auth::check()):
-            ?>
-            <a href="<?= app()->route->getUrl('/login') ?>">Вход</a>
-<!--            <a href="--><?php //= app()->route->getUrl('/signup') ?><!--">Регистрация</a>-->
-        <?php
-        else:
-            ?>
-            <a href="<?= app()->route->getUrl('/logout') ?>">Выход (<?= app()->auth::user()->name ?>)</a>
-        <?php
-        endif;
-        ?>
-    </nav>
 </header>
 <main>
     <?= $content ?? '' ?>

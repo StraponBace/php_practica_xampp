@@ -1,15 +1,11 @@
 <h2>Добавление подразделения</h2>
 <h3><?= $message ?? ''; ?></h3>
 
-<?php
-if (app()->auth::check()):
-    ?>
-    <form method="post">
-        <input type="text" name="name" placeholder="Название подразделения">
-        <input type="text" name="species" placeholder="Вид подразделения">
-        <button>Добавить</button>
-    </form>
-<?php endif; ?>
+<form method="post">
+    <input type="text" name="name" placeholder="Название подразделения">
+    <input type="text" name="species" placeholder="Вид подразделения">
+    <button>Добавить</button>
+</form>
 
 <style>
     form{

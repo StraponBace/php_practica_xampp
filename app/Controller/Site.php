@@ -3,7 +3,8 @@
 namespace Controller;
 
 use Model\Department;
-use Model\Post;
+use Model\Employee;
+use Model\Role;
 use Src\View;
 use Src\Request;
 use Model\User;
@@ -12,23 +13,9 @@ use Src\Auth\Auth;
 
 class Site
 {
-    public function index(): string
-    {
-        $posts = Post::all();
-        return (new View())->render('site.post', ['posts' => $posts]);
-    }
-
     public function hello(): string
     {
         return new View('site.hello', ['message' => 'hello working']);
-    }
-
-    public function signup(Request $request): string
-    {
-        if ($request->method === 'POST' && User::create($request->all())) {
-            app()->route->redirect('/go');
-        }
-        return new View('site.signup');
     }
 
     public function login(Request $request): string
@@ -60,10 +47,46 @@ class Site
             return new View('site.add_department');
         }
         if ($request->method === 'POST' && Department::create($request->all())) {
-            app()->route->redirect('/go');
+            app()->route->redirect('/hello');
         }
-        return new View('site.signup');
         return new View('site.add_department', ['message' => 'исправить message']);
     }
 
+    public function add_employee(Request $request): string
+    {
+        if($request->method === 'GET') {
+            return new View('site.add_employee');
+        }
+        if ($request->method === 'POST' && Employee::create($request->all())) {
+            app()->route->redirect('/hello');
+        }
+        return new View('site.add_employee', ['message' => 'исправить message']);
+    }
+
+    public function add_new_employee(Request $request): string
+    {
+        if($request->method === 'GET') {
+            return new View('site.add_new_employee');
+        }
+        if ($request->method === 'POST' && Employee::create($request->all())) {
+            app()->route->redirect('/hello');
+        }
+        return new View('site.add_new_employee', ['message' => 'исправить message']);
+    }
+
+    public function attach_employee(Request $request): string
+    {
+        if($request->method === 'GET') {
+            return new View('site.add_new_employee');
+        }
+        return new View('site.attach_employee', ['message' => 'исправить message']);
+    }
+
+    public function list_employees(Request $request): string
+    {
+        if($request->method === 'GET') {
+            return new View('site.list_employees');
+        }
+        return new View('site.list_employees', ['message' => 'исправить message']);
+    }
 }
