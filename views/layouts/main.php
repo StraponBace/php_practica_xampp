@@ -36,7 +36,9 @@
             <a href="<?= app()->route->getUrl('/add_employee') ?>">Добавить сотрудника</a>
             <a href="<?= app()->route->getUrl('/add_department') ?>">Добавить подразделение</a>
             <a href="<?= app()->route->getUrl('/attach_employee') ?>">Прикрепить сотрудника</a>
-            <a href="<?= app()->route->getUrl('/list_employees') ?>">Списки сотрудника</a>
+            <a href="<?= app()->route->getUrl('/list_employees') ?>">Сотрудники по подразделениям</a>
+            <a href="<?= app()->route->getUrl('/list_employees_compound') ?>">Сотрудники по составу</a>
+            <a href="<?= app()->route->getUrl('/employees_age') ?>">Возраст по подразделениям</a>
 <!--            --><?php
 //            endif;
 //            ?>

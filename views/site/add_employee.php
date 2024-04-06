@@ -23,7 +23,7 @@
         gap: 1em;
         width: 20em;
     }
-    input{
+    input, select{
         height: 2em;
         padding-left: 0.5em;
     }

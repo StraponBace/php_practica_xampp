@@ -1,3 +1,9 @@
+views/fonts/Inter-Black.ttf
+views/fonts/Inter-ExtraBold.ttf
+views/fonts/Inter-ExtraLight.ttf
+views/fonts/Inter-Light.ttf
+views/fonts/Inter-Medium.ttf
+views/fonts/Inter-Thin.ttf
 .idea
 vendor/
 composer.lock

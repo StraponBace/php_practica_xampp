@@ -1,4 +1,4 @@
-<h2>Список сотрудников по подразделениям</h2>
+<h2>Подсчёт среднего возраста</h2>
 <h3><?= $message ?? ''; ?></h3>
 
 <form method="post">
@@ -6,22 +6,16 @@
         Подразделение
         <input type="checkbox" name="department">
     </label>
-
     <button>Обновить список</button>
 </form>
 
 <ul>
     <li>
         <div>
-            <div class="fio">
-                <p>Фамилия</p>
-                <p>Имя</p>
-                <p>Отчество</p>
+            <div class="dep-and-age">
+                <p>Подразделение:</p>
+                <p>Средний_возраст</p>
             </div>
-            <p>Гендер</p>
-            <p>Дата рождения</p>
-            <p>Адрес прописки</p>
-            <p>Должность</p>
         </div>
     </li>
 </ul>
@@ -34,14 +28,10 @@
         gap: 1em;
         width: 20em;
     }
-    input, select{
-        height: 2em;
-        padding-left: 0.5em;
-    }
     button{
         height: 2em;
     }
-    .fio{
+    .dep-and-age{
         display: flex;
         gap: 1em;
     }

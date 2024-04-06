@@ -1,12 +1,10 @@
-<h2>Список сотрудников по подразделениям</h2>
+<h2>Список сотрудников по составу</h2>
 <h3><?= $message ?? ''; ?></h3>
 
 <form method="post">
-    <label for="department">
-        Подразделение
-        <input type="checkbox" name="department">
-    </label>
-
+    <select name="structure" id="structure">
+        <option value="value">value_structure</option>
+    </select>
     <button>Обновить список</button>
 </form>
 

@@ -63,21 +63,10 @@ class Site
         return new View('site.add_employee', ['message' => 'исправить message']);
     }
 
-    public function add_new_employee(Request $request): string
-    {
-        if($request->method === 'GET') {
-            return new View('site.add_new_employee');
-        }
-        if ($request->method === 'POST' && Employee::create($request->all())) {
-            app()->route->redirect('/hello');
-        }
-        return new View('site.add_new_employee', ['message' => 'исправить message']);
-    }
-
     public function attach_employee(Request $request): string
     {
         if($request->method === 'GET') {
-            return new View('site.add_new_employee');
+            return new View('site.attach_employee');
         }
         return new View('site.attach_employee', ['message' => 'исправить message']);
     }
@@ -88,5 +77,21 @@ class Site
             return new View('site.list_employees');
         }
         return new View('site.list_employees', ['message' => 'исправить message']);
+    }
+
+    public function list_employees_compound(Request $request): string
+    {
+        if($request->method === 'GET') {
+            return new View('site.list_employees_compound');
+        }
+        return new View('site.list_employees_compound', ['message' => 'исправить message']);
+    }
+
+    public function employees_age(Request $request): string
+    {
+        if($request->method === 'GET') {
+            return new View('site.employees_age');
+        }
+        return new View('site.employees_age', ['message' => 'исправить message']);
     }
 }
