@@ -2,8 +2,8 @@
 <h3><?= $message ?? ''; ?></h3>
 
 <form method="post">
-    <input type="text" name="name" placeholder="Название подразделения">
-    <input type="text" name="species" placeholder="Вид подразделения">
+    <input type="text" name="title" placeholder="Название подразделения">
+    <input type="text" name="species_department" placeholder="Вид подразделения">
     <button>Добавить</button>
 </form>
 

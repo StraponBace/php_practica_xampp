@@ -47,9 +47,9 @@ class Site
             return new View('site.add_department');
         }
         if ($request->method === 'POST' && Department::create($request->all())) {
-            app()->route->redirect('/hello');
+            return new View('site.add_department', ['message' => 'Подразделение добавлено!']);
         }
-        return new View('site.add_department', ['message' => 'исправить message']);
+        return new View('site.add_department');
     }
 
     public function add_employee(Request $request): string
@@ -58,7 +58,7 @@ class Site
             return new View('site.add_employee');
         }
         if ($request->method === 'POST' && Employee::create($request->all())) {
-            app()->route->redirect('/hello');
+            return new View('site.add_employee', ['message' => 'Сотрудник добавлен!']);
         }
         return new View('site.add_employee', ['message' => 'исправить message']);
     }

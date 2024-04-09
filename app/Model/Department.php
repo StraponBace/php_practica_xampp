@@ -20,4 +20,9 @@ class Department extends Model
     {
         return $this->id;
     }
+
+    public function getTitle(): int
+    {
+        return $this->title;
+    }
 }
